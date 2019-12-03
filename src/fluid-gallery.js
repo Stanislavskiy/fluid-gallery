@@ -69,14 +69,23 @@ export default class FluidGallery {
       width,
       height
     } = this._canvas
+    const aspect = width / height
 
     this._renderer.setSize(width, height)
-    this._camera.aspect = width / height
+    this._camera.aspect = aspect
 
     this._material.uniforms.uvRate1.value.y = height / width
 
     const dist = this._camera.position.z - this._plane.position.z
-    this._camera.fov = 2 * (180 / Math.PI) * Math.atan(1.0 / (2 * dist))
+    let rad;
+
+    if (aspect > 1) {
+      rad = 180;
+    } else {
+      rad = 90;
+    }
+
+    this._camera.fov = 2 * (rad / Math.PI) * Math.atan(height / (2 * dist));
 
     this._plane.scale.x = width / height
 
