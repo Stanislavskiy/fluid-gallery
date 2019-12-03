@@ -4,7 +4,7 @@
   "description": "Fluid media gallery for React powered by WebGL.",
   "author": "transitive-bullshit",
   "license": "MIT",
-  "repository": "transitive-bullshit/react-fluid-gallery",
+  "repository": "Stanislavskiy/fluid-gallery",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
